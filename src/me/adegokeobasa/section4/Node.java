@@ -3,19 +3,19 @@ package me.adegokeobasa.section4;
 /**
  * Created by epapa on 25/10/2015.
  */
-public class Node {
-    private int data;
-    private Node nextNode;
+public class Node<T> {
+    private T data;
+    private Node<T> nextNode;
 
-    public Node(int data) {
+    public Node(T data) {
         this.data = data;
     }
 
-    public int getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(T data) {
         this.data = data;
     }
 
@@ -29,6 +29,6 @@ public class Node {
 
     @Override
     public String toString() {
-        return "Data: " + this.data;
+        return "Data: " + this.data.toString();
     }
 }

@@ -3,17 +3,21 @@ package me.adegokeobasa.section4;
 /**
  * Created by epapa on 25/10/2015.
  */
-public class LinkedList {
+public class LinkedList<T> {
 
-    private Node head;
+    private Node<T> head;
+
+    public Node<T> getHead() {
+        return head;
+    }
 
     /**
      * Inserts new node at the head
      *
      * @param data
      */
-    public void insertAtHead(int data) {
-        Node newNode = new Node(data);
+    public void insertAtHead(T data) {
+        Node<T> newNode = new Node<T>(data);
         newNode.setNextNode(this.head);
         this.head = newNode;
     }
@@ -21,7 +25,7 @@ public class LinkedList {
     @Override
     public String toString() {
         String result = "{";
-        Node current = this.head;
+        Node<T> current = this.head;
 
         while (current != null) {
             result += current.toString() + ",";
@@ -34,7 +38,7 @@ public class LinkedList {
     public int length() {
         int length = 0;
 
-        Node current = this.head;
+        Node<T> current = this.head;
 
         while (current != null) {
             length++;
@@ -49,11 +53,10 @@ public class LinkedList {
     }
 
     public Node find(int data) {
-
-        Node current = this.head;
+        Node<T> current = this.head;
 
         while (current != null) {
-            if(current.getData() == data) {
+            if(current.getClass().equals(data)) {
                 return current;
             }
             current = current.getNextNode();
@@ -62,5 +65,9 @@ public class LinkedList {
         return null;
     }
 
+    public boolean isEmpty()
+    {
+        return this.head == null;
+    }
 
 }

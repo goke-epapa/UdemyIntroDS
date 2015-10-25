@@ -6,7 +6,7 @@ package me.adegokeobasa.section4;
 public class LinkedListDemo {
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        LinkedList<Integer> list = new LinkedList<Integer>();
 
         list.insertAtHead(5);
         list.insertAtHead(10);
