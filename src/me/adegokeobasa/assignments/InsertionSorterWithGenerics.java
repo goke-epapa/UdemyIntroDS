@@ -1,6 +1,4 @@
-package me.adegokeobasa;
-
-import me.adegokeobasa.assignments.Employee;
+package me.adegokeobasa.assignments;
 
 import java.util.Arrays;
 
